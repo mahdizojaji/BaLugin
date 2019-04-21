@@ -5,19 +5,17 @@ from os import listdir, path, mkdir
 from importlib import import_module
 from termcolor import cprint as print
 from configparser import ConfigParser, ExtendedInterpolation
-
+from config import *
 rp = path.dirname(path.realpath(__file__))
 
 # Bale Bot Authorization Token
 updater = updater.Updater(
-    token="194346805:1a9ca159b73492ae986a85ba24b67682356ee006",
+    token=token,
 
 )
 # Define dispatcher
 dispatcher = updater.dispatcher
 
-def hi(a):
-    pass
 
 def _process_msgs(bot: Bot, update: base_models.FatSeqUpdate):
     for plugin in plugins_dir_list():
